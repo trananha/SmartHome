@@ -1,3 +1,3 @@
 # SmartHome
-cd smarthome
+cd smarthome\\
 npm start
