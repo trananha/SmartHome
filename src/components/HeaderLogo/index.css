@@ -1,0 +1,22 @@
+.header {
+    background-color: #03BC2C;
+    color: #ffffff;
+    line-height: 60px;
+    font-size: 36px;
+    letter-spacing: 10px;
+    display: flex;
+}
+
+.logo {
+    flex: 10%;
+    font-size: 45px;
+}
+
+.user {
+    flex: 10%;
+    font-size: 30px;
+}
+
+.title {
+    flex: 80%;
+}
