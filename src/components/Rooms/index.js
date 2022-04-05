@@ -32,7 +32,7 @@ const rooms = [
 function genRoom(roomItem) {
     return(
         <div className="room">
-            <img src= {roomItem.img}></img>
+            <img src= {roomItem.img} alt="room" />
             <h4>{roomItem.name}</h4>
             
         </div>
