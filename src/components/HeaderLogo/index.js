@@ -1,12 +1,14 @@
 import './index.css';
 import { FaUserAlt } from "react-icons/fa";
 import { FaHouseUser } from "react-icons/fa";
+import {Link} from "react-router-dom";
 
 function HeaderwLogo({title}) {
     return (
         <div className="header">
+            
             <div className='logo'>
-                <FaHouseUser />
+            <FaHouseUser />
             </div>
             <div className='title'>
                 {title}

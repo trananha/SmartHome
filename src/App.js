@@ -8,40 +8,28 @@ import Rooms from "./components/Rooms/index";
 import Menu from './components/Menu/index';
 import Gas from './components/Gas/index';
 import Temp_Humid from './components/Temp&Humid/index';
+import Login from './components/Login/index';
 import HomePage from './components/Homepage';
-
+import HeaderLogo from './components/HeaderLogo/index'
+import InfoEachRoom from './components/InfoEachRoom/index';
+import Light from './components/Light/index';
+import Door from './components/Door/index';
 function App() {
   return (
     <div className="App">
-      <Header />
-      
-      <div className="main">
-        <img src={pic} alt="pic" />
-
-        <div className='login'>
-          <span className='dot'>
-            <FaHouseUser className='logo' />
-          </span>
-          <div className='form_title'>
-            
-          </div>
-          <form></form>
-        </div>
-      </div>
-
-      {/* <Router>
+      <HeaderLogo title={"SMART HOME FOR YOUR FUTURE"}/>
+      <Router>
         <Switch>
-          <Route exact path="/" component={HomePage}>a</Route>
-          <Route path="/about" component={Temp_Humid} />
-          <Route path="/contactus" component={Gas} />
+          <Route exact path="/" component={HomePage}></Route>
+          <Route path="/temp_humid" component={Temp_Humid} />
+          <Route path="/gas" component={Gas} />
+          <Route path="/light" component={Light}/>
+          <Route path="/door" component={Door}/>
           <Redirect to="/" />
         </Switch>
-      </Router> */}
+      </Router>
       
-      {/* <Menu/>
-      <Rooms />
-      <Gas />
-      <Temp_Humid/> */}
+      
       
     </div>
   );

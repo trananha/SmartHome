@@ -1,8 +1,5 @@
+import livingroom from './livingroom.jpg';
 import './index.css';
-import livingroom from './livingroom.jpg'
-import InfoEachRoom from '../InfoEachRoom/index';
-import {BrowserRouter as Router, Switch, Route, Routes, Link, Redirect} from 'react-router-dom';
-// Fake data
 const rooms = [
     {
         id: 1,
@@ -56,32 +53,41 @@ const rooms = [
     }
 ]
 
-
 function genRoom(roomItem) {
-    return(
-
+    if (roomItem.light === 1) return(
         <div className="room">
-            <Link path= "./room">
-                <img src= {roomItem.img} alt="room" />
-                <h4>{roomItem.name}</h4>
-            </Link>
-            
-            
+            <img src= {roomItem.img} alt="room" />
+            <h4>{roomItem.name}</h4>
+            <div className="data">
+                <label className="switch">
+                    <input type="checkbox" checked/>
+                    <span className="slider round"></span>
+                </label>
+            </div>
         </div>
     );
-}
-
-
-function Rooms() {
-    return (
-        <div className="roomContainer">
-              {rooms.map( room => {
-                  return genRoom(room);
-              })}
-
+    else return (
+        <div className="room">
+            <img src= {roomItem.img} alt="room" />
+            <h4>{roomItem.name}</h4>
+            <div className="data">
+                <label className="switch">
+                    <input type="checkbox"/>
+                    <span className="slider round"></span>
+                </label>
+            </div>
         </div>
     )
 }
 
 
-export default Rooms;
+function Light() {
+    return (
+        <div className="roomContainer">
+              {rooms.map( room => {
+                  return genRoom(room);
+              })}
+        </div>
+    )
+}
+export default Light;

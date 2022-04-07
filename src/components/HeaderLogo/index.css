@@ -3,11 +3,13 @@
     color: #ffffff;
     line-height: 60px;
     font-size: 36px;
-    letter-spacing: 10px;
+    letter-spacing: 4px;
     display: flex;
+    align-items: center;
+    
 }
 
-.logo {
+/* .logo {
     flex: 10%;
     font-size: 45px;
 }
@@ -15,8 +17,13 @@
 .user {
     flex: 10%;
     font-size: 30px;
+} */
+.logo, .user {
+    flex: 10%;
 }
 
 .title {
     flex: 80%;
+    font-weight: 700;
+    font-size: 2vw;
 }
