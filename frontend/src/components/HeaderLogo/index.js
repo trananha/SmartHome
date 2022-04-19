@@ -26,7 +26,9 @@ function HeaderLogo({title}) {
     return (
         <div className="header">
             <div className='logo'>
-                <FaHouseUser />
+                <Link to="./">
+                    <FaHouseUser />
+                </Link>
             </div>
             <div className='title'>
                 {title}

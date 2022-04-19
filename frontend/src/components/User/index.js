@@ -27,7 +27,7 @@ function SigninScreen(props) {
     <form onSubmit={submitHandler} >
       <ul className="form-container">
         <li>
-          <h2>Sign-In</h2>
+          <div className='title'>Sign in</div>
         </li>
         <li>
           {loading && <div>Loading...</div>}
@@ -45,8 +45,8 @@ function SigninScreen(props) {
           <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
           </input>
         </li>
-        <li>
-          <button type="submit" className="button primary">Signin</button>
+        <li className='signinbutton'>
+          <button type="submit" className="button primary">Sign in</button>
         </li>     
       </ul>
     </form>

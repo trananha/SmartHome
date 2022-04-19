@@ -9,7 +9,7 @@
     
 }
 
-/* .logo {
+/*.logo {
     flex: 10%;
     font-size: 45px;
 }
@@ -17,7 +17,7 @@
 .user {
     flex: 10%;
     font-size: 30px;
-} */
+}*/
 
 .logo, .user {
     flex: 10%;
