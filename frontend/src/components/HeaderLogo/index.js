@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {logout} from '../../actions/userActions';
 import { useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
 
 const CloseMenu=() =>{
     document.querySelector(".sidebar").classList.remove("open");
@@ -15,13 +16,14 @@ const OpenMenu=() =>{
 }
 
 function HeaderLogo({title}) {
+    const history = useHistory();
     const userSignin = useSelector(state => state.userSignin)
     const {userInfo} =userSignin;
     const dispatch = useDispatch();
     const logoutPage = (props) => {
         dispatch(logout());
         document.querySelector(".sidebar").classList.remove("open");
-        props.history.push("/");
+        history.push("/");
     }
     return (
         <div className="header">
@@ -47,8 +49,8 @@ function HeaderLogo({title}) {
                         <li>
                             <div className="title">UserName:</div> {userInfo ? userInfo.name : ""}
                         </li>
-                        <li >
-                        <div className="title">Email:</div> { userInfo ? userInfo.email : ""}
+                        <li className='email'>
+                            <div className="title">Email:</div> { userInfo ? userInfo.email : ""}
                         </li>
                         <li className="front_logout" onClick={logoutPage}>Logout</li> 
                     </ul>    

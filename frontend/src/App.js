@@ -16,17 +16,17 @@ function App() {
       <Router>
         <HeaderLogo title={"SMART HOME FOR YOUR FUTURE"}/>
         <Switch>
-          <Route exact path="/" component={HomePage}/>
+          <Route exact path="/" component={Main}/>
+          <Route path="/homepage" component={HomePage} />
           <Route path="/temp_humid" component={Temp_Humid} />
           <Route path="/gas" component={Gas} />
           <Route path="/light" component={Light}/>
           <Route path="/door" component={Door}/>
           <Route path="/signin" component={SigninScreen} />
           <Redirect to="/" />
+          
         </Switch>
       </Router>
-      
-      
       
     </div>
   );

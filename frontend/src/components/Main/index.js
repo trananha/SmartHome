@@ -2,8 +2,6 @@ import './index.css';
 import React from "react";
 import { Link } from "react-router-dom";
 import {useSelector} from 'react-redux';
-import Rooms from "../Rooms/index";
-import Menu from '../Menu/index';
 import HeaderLogo from '../Main/index';
 import pic from './smarthome.jpg';
 import { FaHouseUser } from "react-icons/fa";
@@ -19,7 +17,10 @@ function HomePage() {
                 
                 <div className='login'>
                     <Link to="./signin">
-                        <button>Sign in</button>
+                        <button className='first'>Sign in</button>
+                    </Link>
+                    <Link to="./signup">
+                        <button>Sign up</button>
                     </Link>
                     <span className='dot'>
                         <FaHouseUser className='logo' />

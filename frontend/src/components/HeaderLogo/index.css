@@ -108,3 +108,7 @@
 .acount {
     color: brown;
 }
+
+.email {
+    overflow-wrap: break-word;
+}

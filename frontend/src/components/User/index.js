@@ -12,7 +12,7 @@ function SigninScreen(props) {
   const dispatch = useDispatch();
   useEffect(() => {
     if (userInfo) {
-      props.history.push("/");
+      props.history.push("/homepage");
     }
     return () => {
       //
@@ -37,13 +37,11 @@ function SigninScreen(props) {
           <label htmlFor="email">
             Email
           </label>
-          <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
-          </input>
+          <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)} />
         </li>
         <li>
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
-          </input>
+          <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)} />
         </li>
         <li className='signinbutton'>
           <button type="submit" className="button primary">Sign in</button>
