@@ -8,7 +8,8 @@ function HeaderwLogo({title}) {
         <div className="header">
             
             <div className='logo'>
-            <FaHouseUser />
+                <FaHouseUser />
+                
             </div>
             <div className='title'>
                 {title}

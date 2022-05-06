@@ -75,3 +75,16 @@
   font-size: 85px;
   color: #03BC2C;
 }
+
+.home {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  
+}
+@media screen and (max-width: 792px) {
+  .home {
+      flex-direction: column;
+      align-items: center;
+  }
+}
