@@ -4,50 +4,41 @@ import {Link} from 'react-router-dom'
 
 function Menu() {
     return (
-        <div className="menu">
-            <div className="info">
+            <div className="menu-list">
+                <div className="menu-title">MENU</div>
                 <Link to="./temp_humid">
-                    <div className="info-icon">
-                        <i className="fas fa-temperature-low"></i>
+                    <div className="menu-item">
+                        <div className="item-icon">
+                            <i className="fas fa-temperature-low"></i>
+                        </div>
+                        <span>Nhiệt độ & Độ ẩm</span>
                     </div>
-                    <h4>Nhiệt độ</h4>
                 </Link>
-            </div>
-            <div className="info">
-                <Link to="./temp_humid">
-                    <div className="info-icon">
-                        <i className="fas fa-cloud-rain"></i>
-                    </div>
-                    <h4>Độ ẩm</h4>
-                </Link>
-            </div>
-            <div className="info">
                 <Link to="./gas">
-                    <div className="info-icon">
-                        <i className="fas fa-gas-pump"></i>
+                    <div className="menu-item">
+                        <div className="item-icon">
+                            <i className="fas fa-gas-pump"></i>
+                        </div>
+                        <span>Thông tin gas</span>
                     </div>
-                    <h4>Gas</h4>
                 </Link>
-            </div>
-            <div className="info">
-                <Link to="./door">
-                    <div className="info-icon">
-                        <i className="fas fa-door-open"></i>
-                    </div>
-                    <h4>Cửa</h4>
-                </Link>
-            </div>
-            <div className="info">
                 <Link to="./light">
-                    <div className="info-icon">
-                        <i className="fas fa-lightbulb"></i>
+                    <div className="menu-item">
+                        <div className="item-icon">
+                            <i className="fas fa-lightbulb"></i>
+                        </div>
+                        <span>Thông tin đèn</span>
                     </div>
-                    <h4>Đèn</h4>
+                </Link>
+                <Link to="./door">
+                    <div className="menu-item">
+                        <div className="item-icon">
+                            <i className="fas fa-door-open"></i>
+                        </div>
+                        <span>Thông tin cửa</span>
+                    </div>
                 </Link>
             </div>
-      
-        </div>
     )
 }
-
 export default Menu

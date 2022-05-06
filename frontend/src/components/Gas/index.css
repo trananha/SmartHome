@@ -1,8 +1,12 @@
-.gas {
+.content {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+}
+.content div {
+    margin: 20px;
 }
 .concen {
     width: 25vw;
@@ -63,3 +67,6 @@ input[type="submit"]:hover {
     border-radius: 10px;
   }
   
+input {
+    cursor: pointer;
+}

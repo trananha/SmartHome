@@ -4,31 +4,17 @@ import {roomAction} from '../../actions/roomsActions';
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-function genRoom(roomItem) {
-    if (roomItem.door === 1) return(
-        <div className="room">
-            <img src= {livingroom} alt="room" />
-            <h4>{roomItem.name}</h4>
-            <div className="data">
-                <label className="switch">
-                    <input type="checkbox" checked/>
-                    <span className="slider round"></span>
-                </label>
-            </div>
-        </div>
+function genARoom(roomItem) {
+    const door = roomItem.door === 1? 'ON': 'OFF'
+    return(
+        <tr>
+            <td>{roomItem.id}</td>
+            <td>{roomItem.name}</td>
+            <td>{door}</td>
+            <td>{roomItem.time}</td>
+            <td>{roomItem.device}</td>
+        </tr>
     );
-    else return (
-        <div className="room">
-            <img src= {livingroom} alt="room" />
-            <h4>{roomItem.name}</h4>
-            <div className="data">
-                <label className="switch">
-                    <input type="checkbox"/>
-                    <span className="slider round"></span>
-                </label>
-            </div>
-        </div>
-    )
 }
 
 
@@ -45,10 +31,19 @@ function Door() {
     return (
         loading ? <div>Loading......</div>:
         error ? <div>{error.message}</div>:
-        <div className="roomContainer">
-              {rooms.map( room => {
-                  return genRoom(room);
-              })}
+        <div>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Room</th>
+                    <th>Door</th>
+                    <th>Last access</th>
+                    <th>Device</th>
+                </tr>
+                {rooms.map(room => {
+                    return genARoom(room);
+                })}
+            </table>
         </div>
     )
 }

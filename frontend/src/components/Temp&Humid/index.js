@@ -1,48 +1,73 @@
 import './index.css';
-import livingroom from './livingroom.jpg'
-import {roomAction} from '../../actions/roomsActions';
-import {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {rooms} from '../Overview/index'
 
-function genRoom(roomItem) {
+// const rooms = [
+//     {
+//         id: 1,
+//         name: 'Living Room',
+//         img: livingroom,
+//         temp: 40,
+//         humid: 0.3
+//     },
+//     {
+//         id: 2,
+//         name: 'Kitchen',
+//         img: livingroom,
+//         temp: 40,
+//         humid: 0.3
+//     },
+//     {
+//         id: 3,
+//         name: 'Library',
+//         img: livingroom,
+//         temp: 40,
+//         humid: 0.3
+//     },
+//     {
+//         id: 4,
+//         name: 'Bedroom 1',
+//         img: livingroom,
+//         temp: 40,
+//         humid: 0.3
+//     },
+//     {
+//         id: 5,
+//         name: 'Bedroom 2',
+//         img: livingroom,
+//         temp: 222,
+//         humid: 0.6
+//     }
+// ]
+function genARoom(roomItem) {
     return(
-        <div className="room">
-            <img src= {livingroom} alt="room" />
-            <h4>{roomItem.name}</h4>
-            <div className="data">
-                <div className="data-item">
-                    <i className="fas fa-temperature-low"></i>
-                    {roomItem.temp}<sup>o</sup>C
-                </div>
-                <div className="data-item">
-                    <i className="fas fa-cloud-rain"></i>
-                    {roomItem.humid *100}%
-                </div>
-
-            </div>
-        </div>
+        <tr>
+            <td>{roomItem.id}</td>
+            <td>{roomItem.name}</td>
+            <td>{roomItem.temp}<sup>o</sup>C</td>
+            <td>{roomItem.humid *100}%</td>
+            <td>{roomItem.time}</td>
+            <td>{roomItem.device}</td>
+        </tr>
     );
 }
-
-
 function Temp_Humid() {
-    const roomState= useSelector(state => state.rooms)
-    const {loading, rooms, error} = roomState
-    const dispatch = useDispatch()
-    useEffect(()=>{
-        dispatch(roomAction());
-        return () => {      
-        }
-    },[]);
-
     return (
-        loading ? <div>Loading......</div>:
-        error ? <div>{error.message}</div>:
-        <div className="roomContainer">
-              {rooms.map( room => {
-                  return genRoom(room);
-              })}
+        <div>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Room</th>
+                    <th>Temp</th>
+                    <th>Humid</th>
+                    <th>Last access</th>
+                    <th>Device</th>
+                </tr>
+                {rooms.map(room => {
+                    return genARoom(room);
+                })}
+            </table>
         </div>
+        
     )
 }
 

@@ -11,16 +11,18 @@ else concen = 'Very High';
 
 function Gas() {
     return (
-        <div className="gas">
+        <div className="content">
             <div className="concen">
                {concen}
             </div>
-            <h2>{gasConcen*100}%</h2>
-            <form>
-                <input type="range" class="range"  min="0" max="100"></input>
-                <input type="submit" value="Hủy cảnh báo"></input>
-                
-            </form>
+            <div>
+                <h2>{gasConcen*100}%</h2>
+                <form>
+                    <input type="range" class="range"  min="0" max="100"></input>
+                    <input type="submit" value="Hủy cảnh báo"></input>
+                    
+                </form>
+            </div>
         </div>
         
     )
